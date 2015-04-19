@@ -1,0 +1,32 @@
+@import 'lib/bootstrap/css/bootstrap.min.css';
+
+form {
+	margin-bottom: 20px;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+.navbar-form {
+	margin-top: 0;
+	padding: 15px 0;
+}
+
+.movie-poster {
+	float: left;
+}
+
+img {
+	margin-right: 20px;
+	width: 200px;
+}
+
+main {
+	margin: 0 20px;
+	padding: 0 20px 20px 20px;
+}
+
+details summary::-webkit-details-marker { display:none; }
+summary { display: none; }

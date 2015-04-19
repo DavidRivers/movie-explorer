@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" ng-app="movieExplorer">
+	<head>
+		<title>Movie Explorer</title>
+		<meta charset="utf-8"/>
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		 <meta name="description" content="Code sample utilizing AngularJS, HTML5, and CSS3."/>
+		 <meta name="keywords" content="code sample, html, css, javascript, angularjs, lessjs"/>
+		<base href="/"/>
+		<!-- <link rel="stylesheet/less" type="text/css" href="styles/registration.less"/> -->
+		<script src="lib/angular/angular.min.js"></script>
+		<script src="lib/angular/angular-resource.min.js"></script>
+		<script src="lib/angular/angular-route.min.js"></script>
+		<script src="app.js"></script>
+		<link rel="stylesheet" href="main.css"/>
+	</head>
+	<body ng-controller="mainController as main">
+		<nav class="navbar navbar-default navbar-form">
+			<!-- <ol ng-if="displayBreadcrumbs === true" class="breadcrumb"> -->
+				<!-- <li><a href="/">Home</a></li> -->
+				<!-- <li><a href="">Library</a></li> -->
+				<!-- <li class="active">Data</li> -->
+			<!-- </ol> -->
+
+			<form ng-submit="main.submit()" class="" role="search">
+				<div class="container-fluid">
+					<legend>Search Movies</legend>
+					<div class="input-group">
+						<input ng-model="main.query" type="text" class="form-control" placeholder="Insert movie title">
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+						</span>
+					</div>
+				</div>
+			</form>
+			<div class="container-fluid search-results list-group">
+				<span ng-repeat="result in main.results" class="list-group-item" href="#">
+					<a href="details/{{result.imdbID}}">
+						{{result.Title}}
+					</a>
+				</span>
+			</div>
+		</nav>
+
+
+		<main ng-view class="center-block"></main>
+
+		 <!-- jQuery is required for Bootsrap JS -->
+		 <script src="lib/jquery-2.1.3.min.js"></script>
+		 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	</body>
+</html>
