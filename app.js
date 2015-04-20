@@ -50,5 +50,6 @@ movieExplorer.controller('detailController', function($scope, $resource, $routeP
 	detailsAPI.get({ i: $routeParams.imdbID })
 		.$promise.then(function(res) {
 			$scope.movie = res;
+			$scope.movie.PosterURL = 'http://img.omdbapi.com/?apikey=de6cab49&i=' + $routeParams.imdbID;
 		});
 });
