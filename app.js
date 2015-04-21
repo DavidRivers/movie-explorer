@@ -6,7 +6,7 @@ movieExplorer.config(function ($routeProvider, $locationProvider) {
 			templateUrl: 'views/main.html',
 			controller: 'mainController'
 		})
-		.when('/details/:imdbID', {
+		.when('/:title', {
 			templateUrl: 'views/details.html',
 			controller: 'detailController'
 		})
@@ -43,9 +43,9 @@ movieExplorer.controller('detailController', function($scope, $resource, $routeP
 		{ callback: 'JSON_CALLBACK', plot: 'full', tomatoes: true },
 		{ get: { method: 'JSONP' } });
 
-	detailsAPI.get({ i: $routeParams.imdbID })
+	detailsAPI.get({ t: $routeParams.title })
 		.$promise.then(function(res) {
 			$scope.movie = res;
-			$scope.movie.PosterURL = 'http://img.omdbapi.com/?apikey=de6cab49&i=' + $routeParams.imdbID;
+			$scope.movie.PosterURL = 'http://img.omdbapi.com/?apikey=de6cab49&i=' + res.imdbID;
 		});
 });
