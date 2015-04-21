@@ -1,6 +1,12 @@
 # MovieExplorer
 
-Code sample utilizing AngularJS, HTML5, and CSS3.
+Code sample utilizing AngularJS and Bootstrap.
+
+## Dependencies
+
+* AngularJS provides for application behavior and organization.
+* Bootstrap provides cross-browser-compatible, responsive styles.
+* LessJS allows me to integrate Bootstrap's multitude of style hooks in a lesser obtrusive manner (using extend's to glue those hooks in my stylesheet).
 
 ## Notes
 
