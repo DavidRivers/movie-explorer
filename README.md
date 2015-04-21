@@ -1,6 +1,6 @@
 # MovieExplorer
 
-Code sample utilizing AngularJS and Bootstrap.
+## [Demo](http://movie-explorer.stage.davidrivers.name/)
 
 ## Dependencies
 
