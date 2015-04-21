@@ -42,6 +42,12 @@ summary { display: none; }
 
 .header-nav-search-results {
 	&:extend(.list-group all);
+	&:extend(.well all);
+}
+
+.header-nav-search-results-item {
+	&:extend(.list-group-item all);
+	a { color: @gray; }
 }
 
 .header-nav-submit-icon {

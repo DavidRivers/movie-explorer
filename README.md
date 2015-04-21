@@ -15,7 +15,3 @@ This app is intended as a way to discover and browse movies that the user finds 
 * Written using Angular or a similar js library
 * A single-page application
 * Mobile responsive
-
-## TODO
-
-* Use less to inject Bootstrap hooks via mixins/extends to cleanse markup
