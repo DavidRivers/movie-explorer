@@ -1,0 +1,72 @@
+@import '../lib/bootstrap/less/bootstrap.less';
+@icon-font-path: '../lib/bootstrap/fonts/';
+
+summary { display: none; }
+
+.clearfix-vertical-margin {
+	&:extend(.clearfix all);
+	&:extend(.visible-xs-block all);
+}
+
+.header {
+	&:extend(.navbar all);
+	&:extend(.navbar-default all);
+}
+
+.header-logo {
+	&:extend(.navbar-brand all);
+	color: #333;
+}
+
+.header-logo-icon {
+	&:extend(.glyphicon all);
+	&:extend(.glyphicon-film all);
+	margin-right: 2px;
+	position: relative;
+	top: 2px;
+}
+
+.header-nav-input-group {
+	&:extend(.input-group all);
+	margin-top: 10px;
+}
+
+.header-nav-query {
+	&:extend(.form-control all);
+}
+
+.header-nav-submit-button {
+	&:extend(.btn all);
+	&:extend(.btn-default all);
+}
+
+.header-nav-search-results {
+	&:extend(.list-group all);
+}
+
+.header-nav-submit-icon {
+	&:extend(.glyphicon all);
+	&:extend(.glyphicon-search all);
+}
+
+.main { &:extend(.container-fluid all); }
+
+.movie-details-column { .make-sm-column(4); }
+
+.movie-details-list {
+	&:extend(.well all);
+	dl { margin-bottom: 5px; }
+	li { list-style: none; }
+}
+
+.movie-plot {
+	.make-sm-column(8);
+	margin-bottom: 15px;
+}
+
+.movie-poster {
+	&:extend(.thumbnail all);
+	float: left;
+	margin-right: 20px;
+	max-width: 35%;
+}

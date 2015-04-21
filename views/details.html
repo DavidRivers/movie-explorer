@@ -1,28 +1,28 @@
 <article>
 	<h1>{{movie.Title}}</h1>
 
-	<div class="plot-col col-sm-8">
-		<img ng-if="movie.Poster !== 'N/A'" ng-src="{{movie.PosterURL}}" alt="{{movie.Title}} poster" class="movie-poster thumbnail"/>
+	<div class="movie-plot">
+		<img ng-if="movie.Poster !== 'N/A'" ng-src="{{movie.PosterURL}}" alt="{{movie.Title}} poster" class="movie-poster"/>
 		<p>{{movie.Plot}}</p>
 	</div>
 
-  <div class="clearfix visible-xs-block" style="margin-bottom: 10px;"></div>
+  <div class="clearfix-vertical-margin"></div>
 
-	<div class="col-sm-4">
+	<div class="movie-details-column">
 		<details open>
 			<summary>Metadata</summary>
-			<ul class="well">
-				<li class=""><dl><dt>Year</dt>
+			<ul class="movie-details-list">
+				<li><dl><dt>Year</dt>
 					<dd>{{movie.Year}}</dd></dl></li>
-				<li class=""><dl><dt>Genre</dt>
+				<li><dl><dt>Genre</dt>
 					<dd>{{movie.Genre}}</dd></dl></li>
-				<li class=""><dl><dt>Language</dt>
+				<li><dl><dt>Language</dt>
 					<dd>{{movie.Language}}</dd></dl></li>
-				<li class=""><dl><dt>Runtime</dt>
+				<li><dl><dt>Runtime</dt>
 					<dd>{{movie.Runtime}}</dd></dl></li>
-				<li class=""><dl><dt>Director</dt>
+				<li><dl><dt>Director</dt>
 					<dd>{{movie.Director}}</dd></dl></li>
-				<li class=""><dl><dt>Starring</dt>
+				<li><dl><dt>Starring</dt>
 					<dd>{{movie.Actors}}</dd></dl></li>
 			</ul>
 		</details>

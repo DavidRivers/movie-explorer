@@ -25,11 +25,6 @@ movieExplorer.controller('mainController', function($scope, $resource, $routePar
 		{ callback: 'JSON_CALLBACK' },
 		{ get: { method: 'JSONP' } });
 
-	// http://img.omdbapi.com/?i=tt0072890&apikey=de6cab49
-	var posterAPI = $resource('http://img.omdbapi.com/?i=tt0072890',
-		{ apikey: 'de6cab49', callback: 'JSON_CALLBACK' },
-		{ get: { method: 'JSONP' } });
-
 	search.submit = function() {
 		searchAPI.get({ s: search.query })
 			.$promise.then(function(res) {
@@ -37,6 +32,7 @@ movieExplorer.controller('mainController', function($scope, $resource, $routePar
 			});
 	};
 
+	// There must be a cleaner way to do this...
 	$scope.$on('$routeChangeStart', function(next, current) { 
 		search.results = [];
 	});

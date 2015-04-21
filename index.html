@@ -7,43 +7,37 @@
 		 <meta name="description" content="Code sample utilizing AngularJS, HTML5, and CSS3."/>
 		 <meta name="keywords" content="code sample, html, css, javascript, angularjs, lessjs"/>
 		<base href="/"/>
-		<!-- <link rel="stylesheet/less" type="text/css" href="styles/registration.less"/> -->
+		<link rel="stylesheet/less" type="text/css" href="styles/main.less"/>
+		<script src="lib/less.min.js"></script>
 		<script src="lib/angular/angular.min.js"></script>
 		<script src="lib/angular/angular-resource.min.js"></script>
 		<script src="lib/angular/angular-route.min.js"></script>
 		<script src="app.js"></script>
-		<link rel="stylesheet" href="main.css"/>
 	</head>
 	<body ng-controller="mainController as main">
-		<nav class="navbar navbar-default navbar-form">
-			<!-- <ol ng-if="displayBreadcrumbs === true" class="breadcrumb"> -->
-				<!-- <li><a href="/">Home</a></li> -->
-				<!-- <li><a href="">Library</a></li> -->
-				<!-- <li class="active">Data</li> -->
-			<!-- </ol> -->
+		<header class="header">
+			<a class="header-logo" href="/"><span class="header-logo-icon"></span>MovieExplorer</a>
 
-			
-			<a class="navbar-brand" href="/"><span class="glyphicon glyphicon-film"></span>MovieExplorer</a>
-
-			<form ng-submit="main.submit()" role="search">
-				<div class="input-group">
-					<input ng-model="main.query" type="text" class="form-control" placeholder="A Clockwork Orange">
-					<span class="input-group-btn">
-						<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+			<nav class="header-nav">
+				<form ng-submit="main.submit()" role="search">
+					<div class="header-nav-input-group">
+						<input ng-model="main.query" type="text" class="header-nav-query" placeholder="Weekend at Bernie's">
+						<span class="input-group-btn">
+							<button type="submit" class="header-nav-submit-button"><span class="header-nav-submit-icon"></span></button>
+						</span>
+					</div>
+				</form>
+				<div ng-hide="main.results.length === 0" class="header-nav-search-results">
+					<span ng-repeat="result in main.results" class="list-group-item" href="#">
+						<a href="details/{{result.imdbID}}">
+							{{result.Title}}
+						</a>
 					</span>
 				</div>
-			</form>
-			<div ng-hide="main.results.length === 0" class="container-fluid search-results list-group">
-				<span ng-repeat="result in main.results" class="list-group-item" href="#">
-					<a href="details/{{result.imdbID}}">
-						{{result.Title}}
-					</a>
-				</span>
-			</div>
-		</nav>
+			</nav>
+		</header>
 
-
-		<main ng-view class="center-block container-fluid"></main>
+		<main ng-view class="main"></main>
 
 		 <!-- jQuery is required for Bootsrap JS -->
 		 <script src="lib/jquery-2.1.3.min.js"></script>
